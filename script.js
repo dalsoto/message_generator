@@ -17,4 +17,14 @@ const lyrics = [
 ];
  var random = lyrics[Math.floor(Math.random()*lyrics.length)];
 
- console.log(random, lyrics[random]);
+ //console.log(random, lyrics[random]);
+
+const prompt = require("prompt-sync")();
+
+const userInput = prompt("Enter g to generate a drake lyric:");
+
+if (userInput === "g") {
+    console.log(random, lyrics[random]);
+} else {
+    console.log("You did not enter g");
+}
