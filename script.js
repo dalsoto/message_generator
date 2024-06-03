@@ -15,16 +15,24 @@ const lyrics = [
     "Savage got a green card straight out of the consulate / Where I go, you go, brother, we Yugoslavian", 
     "Formal is the dress code, dawg, so many checks owed / I feel Czechoslovakian"
 ];
+
+//this gets a random lyric from the array
  var random = lyrics[Math.floor(Math.random()*lyrics.length)];
 
  
-
+//this always prompt to work with node after installing it
 const prompt = require("prompt-sync")();
 
-const userInput = prompt("Enter 'g' to generate a drake lyric:");
+//asking the user to press g and enter to get a drake lyric
+let userInput = prompt("Enter 'g' to generate a Drake lyric: ");
 
-if (userInput === "g") {
+//while loop that will run after they user has entered 'g'
+//It will log a random lyric and then ask the user again for an input
+//if the inout is again 'g' it will loop again until the input is not 'g'
+while (userInput === "g") {
+    const random = lyrics[Math.floor(Math.random() * lyrics.length)];
     console.log(random);
-} else {
-    console.log("You did not enter g");
+    userInput = prompt("Enter 'g' to generate another Drake lyric, or anything else to exit: ");
 }
+
+console.log("Goodbye!");
